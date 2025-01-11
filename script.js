@@ -8,7 +8,7 @@
   /* streamStartDateString will be a date string even if the channel is not currently live (the date will be the current
      date). This may be a Nightbot bug. This is why streamUptimeString is needed to check whether the channel is live */
   if (/\bnot live\b/i.test(streamUptimeString)) {
-    return `${playerName} is not live.`;
+    return `${playerName} ยังไม่ไลฟ์.`;
   }
 
   const streamStartDate = new Date(streamStartDateString);
@@ -67,8 +67,8 @@
     let currentTierPatched = getMmrHistoryResponse.data[0].currenttierpatched;
     let rankingInTier = getMmrHistoryResponse.data[0].ranking_in_tier;
 
-    return `${playerName} is ${fullStreamEloChange >= 0 ? 'UP' : 'DOWN'} ${fullStreamEloChange}RR this stream. Currently ${winCountThisStream}W - ${lossCountThisStream}L - ${drawCountThisStream}D. | Their current rank is ${currentTierPatched} - ${rankingInTier} RR.`;
+    return `${playerName} กำลัง ${fullStreamEloChange >= 0 ? 'บวก' : 'ลบ'} ${fullStreamEloChange}RR ในสตรีมนี้. ตอนนี้ ชนะ ${winCountThisStream} W - แพ้ ${lossCountThisStream} L - เสมอ ${drawCountThisStream} D. | ตอนนี้คุณชายอยู่แรงค์ ${currentTierPatched} - ${rankingInTier} RR.`;
   } catch (e) {
-    return `Failed to parse MMR history: ${e.message}: ${getMmrHistoryResponseJson}`.slice(0, 400);
+    return `ไม่สามารถดึงข้อมูลได้: ${e.message}: ${getMmrHistoryResponseJson}`.slice(0, 400);
   }
 })
