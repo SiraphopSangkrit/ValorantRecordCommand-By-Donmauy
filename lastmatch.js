@@ -1,9 +1,4 @@
-((
-    /** @type {string} */ streamUptimeString,
-    /** @type {string} */ streamStartDateString,
-    /** @type {string} */ urlEncodedGetMmrHistoryResponseJson,
-    /** @type {string} */ playerName,
-) => {
+
     const apiKey = 'HDEV-1d4e9331-6ee1-4e21-a35b-54144020d927';
     
     /**
@@ -47,4 +42,3 @@
     }
 
     return getLastMatch();
-})();
