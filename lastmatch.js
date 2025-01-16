@@ -25,7 +25,7 @@
 
      
   
-      
+      return `${matchDetailsResponse}`;
     } catch (e) {
       return `ไม่สามารถดึงข้อมูลได้: ${e.message}: ${getMmrHistoryResponseJson}`.slice(0, 400);
     }
